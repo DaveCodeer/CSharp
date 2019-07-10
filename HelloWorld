@@ -1,8 +1,5 @@
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp39
 {
@@ -10,8 +7,18 @@ namespace ConsoleApp39
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string name = args[0];
+            string name2 = args[1];
+            Console.WriteLine("Hello World!" + " " + name + " " + name2);
+
+            //foreach (var item in args)
+            //{
+            //    Console.WriteLine(item);
+            //}
             Console.ReadKey();
+
+            
+            
         }
     }
 }
