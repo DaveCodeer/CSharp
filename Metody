@@ -1,0 +1,86 @@
+
+using System;
+
+namespace ConsoleApp39
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ValueTypes();
+
+            for (; ;)
+            {
+                Greeting();
+                age();
+
+                settings();
+
+            }
+
+
+
+
+
+
+        }
+
+        private static void ValueTypes()
+        {
+            int maxInt = int.MaxValue;
+            int minINt = int.MinValue;
+            long maxLong = long.MaxValue;
+            long minLong = long.MinValue;
+            Console.WriteLine("maxINt: " + maxInt);
+            Console.WriteLine("minINt: " + minINt);
+            Console.WriteLine("maxLong: " + maxLong);
+            Console.WriteLine("minLong: " + minLong);
+        }
+
+        /// <summary>
+        /// ustawienia
+        /// </summary>
+        private static void settings()
+        {
+            Console.ResetColor();
+            Console.WriteLine("nacisnij dowolny klawisz");
+            Console.ReadKey();
+
+            Console.Clear();
+        }
+        /// <summary>
+        /// wypisujemy komunikat zalezny od wieku
+        /// </summary>
+        private static void age()
+        {
+            Console.Write("podaj swoj wiek ");
+            int age;
+            bool result = int.TryParse(Console.ReadLine(), out age);
+
+            if (age >= 18)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Jestes pełnoletni, mozesz pic alkohol");
+            }
+            else if (result == false)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("niepoprawny wiek");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("nie jestes pełnoletni, mozesz pic nic");
+            }
+        }
+        /// <summary>
+        ///    wypisujemy powitanie uzytkownika
+        /// </summary>
+        private static void Greeting()
+        {
+            Console.Write("podaj imie ");
+            string name = Console.ReadLine();
+            Console.WriteLine("witaj, " + name);
+        }
+    }
+}
